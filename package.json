@@ -16,7 +16,7 @@
     "node": ">= 0.12.0"
   },
   "scripts": {
-    "start": "node src/",
+    "start": "node --harmony --harmony_default_parameters src",
     "jshint": "jshint src/. test/. --config",
     "mocha": "mocha test/ --recursive",
     "test": "npm run jshint && npm run mocha"
@@ -33,6 +33,7 @@
     "feathers-rest": "^1.2.2",
     "feathers-sequelize": "^1.1.1",
     "feathers-socketio": "^1.3.3",
+    "jade": "^1.11.0",
     "passport": "^0.3.2",
     "passport-bitbucket-oauth2": "^0.1.2",
     "passport-github": "^1.1.0",

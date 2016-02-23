@@ -1,4 +1,5 @@
 'use strict';
+const web = require('./web');
 const project = require('./project');
 const comment = require('./comment');
 const language = require('./language');
@@ -23,4 +24,5 @@ module.exports = function() {
   app.configure(language);
   app.configure(comment);
   app.configure(project);
+  app.configure(web);
 };
