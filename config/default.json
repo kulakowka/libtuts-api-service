@@ -1,0 +1,30 @@
+{
+  "host": "localhost",
+  "port": 3000,
+  "postgres": "postgres://postgres:@localhost:5432/feathers",
+  "public": "../public/",
+  "auth": {
+    "token": {
+      "secret": "bGGBbrJRXyIPRQW3BLaVp/P9/ounEv2L7qIVGfw3uVePt1eUg4Fi6Ji6Bpjknm9rh9hKHaMLwW7aGBVCejXIxA=="
+    },
+    "local": {
+      "usernameField": "email",
+      "userEndpoint": "/api/v1/users",
+      "idField": "username"
+    },
+    "bitbucket": {
+      "clientID": "RTMwWS8YKLBTfnsrmb",
+      "clientSecret": "9KPCVKF2MLV2yfWkeajca4cQdSG5pqvw",
+      "permissions": {
+        "scope": ["account"]
+      }
+    },
+    "github": {
+      "clientID": "cf68fcaebc2b0778f061",
+      "clientSecret": "c90d872447e9f9e3c47b270376516341e43bc817",
+      "permissions": {
+        "scope": []
+      }
+    }
+  }
+}
