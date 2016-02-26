@@ -12,7 +12,7 @@ exports.before = {
   get: [],
   create: [
    transformHook({
-      slug: d => slug(d.title.s),
+      slug: d => slug(d.title.toLowerCase().s),
       contentHtml: d => marked(d.content.s)
     })
   ],
