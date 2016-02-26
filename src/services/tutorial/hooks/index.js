@@ -3,15 +3,17 @@
 const globalHooks = require('../../../hooks');
 const auth = require('feathers-authentication').hooks;
 
+// const validate = require('./validate')
+// const transform = require('./transform')
+
 exports.before = {
-  all: [
-    // auth.verifyToken(),
-    // auth.populateUser(),
-    // auth.requireAuth()
-  ],
+  all: [],
   find: [],
   get: [],
-  create: [],
+  create: [
+    // transform,
+    // validate
+  ],
   update: [],
   patch: [],
   remove: []
