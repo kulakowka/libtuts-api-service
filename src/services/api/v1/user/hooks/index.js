@@ -1,6 +1,6 @@
 'use strict'
 
-const core = require('../../../hooks')
+const core = require('../../../../../hooks')
 const auth = require('feathers-authentication').hooks
 const hooks = require('feathers-hooks')
 

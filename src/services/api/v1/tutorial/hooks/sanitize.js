@@ -1,8 +1,8 @@
 'use strict'
 
 const hooks = require('feathers-hooks')
-const marked = require('../../../utils/marked')
-const getDomain = require('../../../utils/getDomain')
+const marked = require('../../../../../utils/marked')
+const getDomain = require('../../../../../utils/getDomain')
 const slug = require('slug')
 
 exports.remove = hooks.remove('commentsCount', 'contentHtml', 'sourceDomain', 'slug', 'id')

@@ -16,14 +16,13 @@
     "node": ">= 0.12.0"
   },
   "scripts": {
-    // "start": "./node_modules/.bin/pm2 start ecosystem.json",
-    // "stop": "./node_modules/.bin/pm2 stop ecosystem.json",
-    // "logs": "./node_modules/.bin/pm2 logs WEB",
-    "gulp": "./node_modules/.bin/gulp",
-    "clean": "./node_modules/.bin/gulp clean",
-    "build": "NODE_ENV=production ./node_modules/.bin/gulp build",
-    // "start_production": "./node_modules/.bin/pm2 startOrRestart ecosystem.json --env production"
-
+    "__start": "pm2 start ecosystem.json",
+    "__stop": "pm2 stop ecosystem.json",
+    "__logs": "pm2 logs WEB",
+    "gulp": "gulp",
+    "clean": "gulp clean",
+    "build": "NODE_ENV=production gulp build",
+    "__start_production": "pm2 startOrRestart ecosystem.json --env production",
     "start": "node --harmony --harmony_default_parameters --harmony_destructuring src",
     "mocha": "mocha test/ --recursive --harmony --harmony_default_parameters --harmony_destructuring ",
     "test": "standard && npm run mocha"
@@ -63,6 +62,10 @@
   "devDependencies": {
     "jshint": "^2.9.1",
     "mocha": "^2.4.5",
-    "request": "^2.69.0"
+    "request": "^2.69.0",
+    "require-dir": "^0.3.0",
+    "selectize": "^0.12.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
   }
 }
