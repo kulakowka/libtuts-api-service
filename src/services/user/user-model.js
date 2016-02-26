@@ -35,9 +35,9 @@ module.exports = function(sequelize) {
     freezeTableName: true
   });
 
-  user.sync({
-    // force: true
-  });
+  // user.sync({
+  //   force: true
+  // })
 
   return user;
 };

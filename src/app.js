@@ -13,6 +13,7 @@ const bodyParser = require('body-parser');
 const socketio = require('feathers-socketio');
 const middleware = require('./middleware');
 const services = require('./services');
+const logger = require('morgan');
 
 const app = feathers();
 
@@ -21,6 +22,7 @@ app.configure(configuration(path.join(__dirname, '..')));
 app.use(compress())
   .options('*', cors())
   .use(cors())
+  .use(logger('dev'))
   .use(favicon( path.join(app.get('public'), 'favicon.ico') ))
   .use('/', serveStatic( app.get('public') ))
   .use(bodyParser.json())

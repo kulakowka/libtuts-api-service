@@ -2,41 +2,31 @@
 
 const globalHooks = require('../../../hooks');
 const auth = require('feathers-authentication').hooks;
+const hooks = require('feathers-hooks');
 
 exports.before = {
   all: [],
-  find: [
-    // auth.verifyToken(),
-    // auth.populateUser(),
-    // auth.requireAuth()
-  ],
-  get: [
-    // auth.verifyToken(),
-    // auth.populateUser(),
-    // auth.requireAuth()
-  ],
+  find: [],
+  get: [],
   create: [
+    globalHooks.lowerCase('email', 'username'),  // TODO: как только этот хук добавят в бандлед feathers-hooks, надо будет заменить на hooks.lowerCase
     auth.hashPassword()
   ],
   update: [
-    // auth.verifyToken(),
-    // auth.populateUser(),
-    // auth.requireAuth()
+    hooks.disable('external')
   ],
   patch: [
-    // auth.verifyToken(),
-    // auth.populateUser(),
-    // auth.requireAuth()
+    hooks.disable('external')
   ],
   remove: [
-    // auth.verifyToken(),
-    // auth.populateUser(),
-    // auth.requireAuth()
+    hooks.disable('external')
   ]
 };
 
 exports.after = {
-  all: [],
+  all: [
+    hooks.remove('password')
+  ],
   find: [],
   get: [],
   create: [],
