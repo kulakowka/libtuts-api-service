@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 /*
 title
@@ -14,9 +14,9 @@ projects
 commentsCount
 */
 
-const Sequelize = require('sequelize');
+const Sequelize = require('sequelize')
 
-module.exports = function(sequelize) {
+module.exports = function (sequelize) {
   const tutorial = sequelize.define('tutorial', {
     title: {
       type: Sequelize.STRING,
@@ -62,11 +62,11 @@ module.exports = function(sequelize) {
   }, {
     timestamps: true,
     freezeTableName: true
-  });
+  })
 
   // tutorial.sync({
   //   force: true
-  // });
+  // })
 
-  return tutorial;
-};
+  return tutorial
+}

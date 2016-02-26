@@ -1,7 +1,6 @@
-'use strict';
+'use strict'
 
-const globalHooks = require('../../../hooks');
-
+// const globalHooks = require('../../../hooks')
 
 exports.before = {
   all: [],
@@ -11,7 +10,7 @@ exports.before = {
   update: [],
   patch: [],
   remove: []
-};
+}
 
 exports.after = {
   all: [],
@@ -21,4 +20,4 @@ exports.after = {
   update: [],
   patch: [],
   remove: []
-};
+}

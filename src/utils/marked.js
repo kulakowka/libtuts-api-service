@@ -9,10 +9,10 @@ marked.setOptions({
   pedantic: false,
   sanitize: true,
   smartLists: true,
-  smartypants: false,
-  // highlight: function (code, lang, callback) {
-  //   return highlightjs.highlightAuto(code).value
-  // }
+  smartypants: false
+// highlight: function (code, lang, callback) {
+//   return highlightjs.highlightAuto(code).value
+// }
 })
 
 module.exports = marked

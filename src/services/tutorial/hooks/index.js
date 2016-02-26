@@ -1,27 +1,27 @@
-'use strict';
+'use strict'
 
-const globalHooks = require('../../../hooks')
-const auth = require('feathers-authentication').hooks
-const marked = require('../../../utils/marked')
-const getDomain = require('../../../utils/getDomain')
-const slug = require('slug')
+// const globalHooks = require('../../../hooks')
+const sanitize = require('./sanitize')
+// const auth = require('feathers-authentication').hooks
 
 exports.before = {
   all: [],
   find: [],
   get: [],
   create: [
-    hook => {
-      let data = hook.data
-      data.slug = slug(data.title.toLowerCase())
-      data.contentHtml = marked(data.content)
-      data.sourceDomain = getDomain(data.sourceUrl)
-    }
+    sanitize.remove,
+    sanitize.transform
   ],
-  update: [],
-  patch: [],
+  update: [
+    sanitize.remove,
+    sanitize.transform
+  ],
+  patch: [
+    sanitize.remove,
+    sanitize.transform
+  ],
   remove: []
-};
+}
 
 exports.after = {
   all: [],
@@ -31,4 +31,4 @@ exports.after = {
   update: [],
   patch: [],
   remove: []
-};
+}

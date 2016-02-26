@@ -1,10 +1,12 @@
-'use strict';
+/* global describe, it */
 
-const assert = require('assert');
-const app = require('../../../src/app');
+'use strict'
+
+const assert = require('assert')
+const app = require('../../../src/app')
 
 describe('platform service', () => {
   it('registered the platforms service', () => {
-    assert.ok(app.service('platforms'));
-  });
-});
+    assert.ok(app.service('platforms'))
+  })
+})

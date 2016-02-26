@@ -1,11 +1,11 @@
-'use strict';
+'use strict'
 
-const service = require('feathers-sequelize');
-const tutorial = require('./tutorial-model');
-const hooks = require('./hooks');
+const service = require('feathers-sequelize')
+const tutorial = require('./tutorial-model')
+const hooks = require('./hooks')
 
-module.exports = function(){
-  const app = this;
+module.exports = function () {
+  const app = this
 
   const options = {
     Model: tutorial(app.get('sequelize')),
@@ -13,19 +13,19 @@ module.exports = function(){
       default: 5,
       max: 25
     }
-  };
+  }
 
   // Initialize our service with any options it requires
-  app.use('/api/v1/tutorials', service(options));
+  app.use('/api/v1/tutorials', service(options))
 
   // Get our initialize service to that we can bind hooks
-  const tutorialService = app.service('/api/v1/tutorials');
+  const tutorialService = app.service('/api/v1/tutorials')
 
   // Set up our before hooks
-  tutorialService.before(hooks.before);
+  tutorialService.before(hooks.before)
 
   // Set up our after hooks
-  tutorialService.after(hooks.after);
+  tutorialService.after(hooks.after)
 
   // Clear db and populate
   options.Model.sync({
@@ -40,8 +40,8 @@ module.exports = function(){
       languages: ['javascript', 'ruby', 'php'],
       platforms: ['npm', 'go', 'rubygems'],
       projects: ['npm/mocha', 'npm/react']
-    }).then(function(doc) {
+    }).then(function (doc) {
       console.log('Created tutorial', doc.toJSON())
     })
-  });
-};
+  })
+}
