@@ -8,7 +8,7 @@ exports.before = {
   all: [],
   find: [],
   get: [core.lowerCaseId()],
-  create: [core.lowerCase('email', 'username'), auth.hashPassword()],
+  create: [hooks.lowerCase('email', 'username'), auth.hashPassword()],
   update: [hooks.disable('external')],
   patch: [hooks.disable('external')],
   remove: [hooks.disable('external')]
@@ -17,7 +17,7 @@ exports.before = {
 exports.after = {
   all: [],
   find: [
-    // hooks.remove('password')
+    hooks.remove('password')
   ],
   get: [
     hooks.remove('password')
