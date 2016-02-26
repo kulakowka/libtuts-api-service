@@ -34,7 +34,7 @@ module.exports = function(){
     // Create a dummy Users
     tutorialService.create({
       title: 'First test tutorial',
-      sourceUrl: 'http://kulakowka.com',
+      sourceUrl: 'https://blog.feathersjs.com/using-feathersjs-as-an-open-source-alternative-to-firebase-b5d93c200cee#.hwh78seor',
       content: '# header \ntext text',
       keywords: ['nodejs', 'javascript'],
       languages: ['javascript', 'ruby', 'php'],
