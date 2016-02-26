@@ -29,7 +29,7 @@ module.exports = function () {
 
   // custom routes
   app.use('/api/v1/projects/:platform/:name', {
-    find(params) {
+    find (params) {
       let slug = params.platform + '/' + params.name
       return projectService.get(slug)
     }

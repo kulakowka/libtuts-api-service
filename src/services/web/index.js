@@ -1,6 +1,6 @@
 'use strict'
 
-const hooks = require('./hooks')
+// const hooks = require('./hooks')
 
 class Service {
   constructor (options = {}) {
@@ -19,7 +19,7 @@ class Service {
 
   create (data, params) {
     if (Array.isArray(data)) {
-      return Promise.all(data.map(current => this.create(current)))
+      return Promise.all(data.map((current) => this.create(current)))
     }
 
     return Promise.resolve(data)
@@ -34,7 +34,7 @@ class Service {
   }
 
   remove (id, params) {
-    return Promise.resolve({ id})
+    return Promise.resolve({id})
   }
 }
 
@@ -45,16 +45,12 @@ module.exports = function () {
 
   // Initialize our service with any options it requires
   app.get('/', function (req, res) {
-    req.app.service('api/v1/tutorials').find({}).then(tutorials => res.render('homepage/index', {
-    tutorials})
-    )
+    req.app.service('api/v1/tutorials').find({}).then((tutorials) => res.render('homepage/index', {tutorials}))
   })
 
   app.get('/:platform/:name', function (req, res) {
     let slug = req.params.platform + '/' + req.params.name
-    req.app.service('api/v1/projects').get(slug).then(project => res.render('projects/show', {
-    project})
-    )
+    req.app.service('api/v1/projects').get(slug).then((project) => res.render('projects/show', {project}))
   })
 }
 
