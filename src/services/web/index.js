@@ -12,7 +12,10 @@ module.exports = function () {
 
   // Initialize our service with any options it requires
   app.get('/', function (req, res) {
-    app.service('api/v1/tutorials').find().then((tutorials) => res.render('mainpage/index', {tutorials}))
+    app.service('api/v1/tutorials').find().then((tutorials) => {
+      console.log(tutorials)
+      res.render('mainpage/index', {tutorials})
+    })
   })
 
   app.get('/:platform/:name', function (req, res) {

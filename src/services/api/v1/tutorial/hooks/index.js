@@ -26,12 +26,12 @@ exports.before = {
 exports.after = {
   all: [],
   find: [
-    (hook) => {
-      let data = hook.result.data
-      data.forEach((item) => {
-        item.dataValues.webUrl = `/tutorial/${item.dataValues.id}/${item.dataValues.slug}`
-      })
-    }
+    // (hook) => {
+    //   let data = hook.result.data
+    //   data.forEach((item) => {
+    //     item.dataValues.webUrl = `/tutorial/${item.dataValues.id}/${item.dataValues.slug}`
+    //   })
+    // }
   ],
   get: [
     (hook) => {
