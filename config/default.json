@@ -3,6 +3,7 @@
   "port": 3000,
   "postgres": "postgres://postgres:@localhost:5432/feathers",
   "public": "../public/",
+  "baseUrl": "http://localhost:3000",
   "auth": {
     "token": {
       "secret": "bGGBbrJRXyIPRQW3BLaVp/P9/ounEv2L7qIVGfw3uVePt1eUg4Fi6Ji6Bpjknm9rh9hKHaMLwW7aGBVCejXIxA=="

@@ -1,1 +1,14 @@
-h1= project.name
+extends ../layout
+
+block content
+
+  include includes/about
+
+  if tutorials.length
+    br
+    section
+      include ../tutorials/includes/list
+  else
+    h2 No tutorials. 
+    p 
+      a(href='/tutorial/new?project=' + project.platform + '/' + project.name) Create tutorial for #{project.name}

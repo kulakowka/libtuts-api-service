@@ -1,0 +1,16 @@
+form.defaultForm(action="/auth/login" method="post" name="signin")
+  
+  .field
+    //- input(type="text" name="identifier" placeholder="Username or email address" required)
+    input(type="text" name="identifier" placeholder="Username or email address" )
+  
+  .field
+    //- input(type="password" name="password" placeholder="Password" required)
+    input(type="password" name="password" placeholder="Password")
+  
+  .field-description 
+    a(href="/auth/recover") Forgot password?
+
+  .field.buttons.center
+    button.btn.btn-action.btn-wide(type="submit") Sign in
+    

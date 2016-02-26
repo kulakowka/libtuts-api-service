@@ -1,12 +1,15 @@
 'use strict'
+
 const web = require('./web')
-const project = require('./project')
-const comment = require('./comment')
-const language = require('./language')
-const platform = require('./platform')
-const tutorial = require('./tutorial')
-const authentication = require('./authentication')
-const user = require('./user')
+
+const project = require('./api/v1/project')
+const comment = require('./api/v1/comment')
+const language = require('./api/v1/language')
+const platform = require('./api/v1/platform')
+const tutorial = require('./api/v1/tutorial')
+const authentication = require('./api/v1/authentication')
+const user = require('./api/v1/user')
+
 const Sequelize = require('sequelize')
 module.exports = function () {
   const app = this

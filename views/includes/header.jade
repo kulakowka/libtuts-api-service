@@ -1,0 +1,43 @@
+header.js-Pjax
+  .inner
+    a.siteName(href="/") Library Tutorials
+    nav.mainMenu
+      a.item(href='/tutorials') Tutorials
+      a.item(href='/projects') Projects
+      a.item(href='/languages') Languages
+      a.item(href='/platforms') Platforms
+      
+
+    if currentUser
+      nav.userMenu
+        a.item(href="/tutorial/new") Add Tutorial
+        //- span.dropdown
+        //-   a.item.handle Create
+        //-   span.menu.left
+        //-     a(href="/tutorial/new") Create Tutorial
+        //-     a(href="/project/new") Create Project
+        span.dropdown
+          a.item.handle(href="/users/" + currentUser.username)= currentUser.username
+          span.menu.right
+            a(href="/user/" + currentUser.username)= currentUser.username
+            //- a(href="/user/" + currentUser.username + "/drafts") Your Drafts
+            a(href="/user/" + currentUser.username + "/tutorials") Your Tutorials
+            a(href="/user/" + currentUser.username + "/comments") Your Comments
+            a(href="/settings/profile") Settings
+            a.js-button-logout(href="#") Sign Out
+
+        //- span.dropdown
+        //-   a.item.handle.counter(href='/notifications') 99+
+        //-   span.menu.right
+        //-     a(href='/notifications/tutorials') 58 new tutorials
+        //-     a(href='/notifications/comments') 62 new comments
+        //-     a(href='/notifications/projects') 32 new projects
+            
+        
+    else
+      nav.guestMenu
+        span.dropdown
+          a.item.handle Sign in
+          span.menu.right
+            a(href='/auth/signin') Sign in
+            a(href='/auth/signup') Sign up

@@ -1,0 +1,59 @@
+.CodeMirror {
+  height: auto;
+  border: 1px solid #eee;
+  /*min-height: 200px;*/
+}
+.CodeMirror-scroll{
+  min-height: 100px; 
+}
+.CodeMirror pre.CodeMirror-placeholder{
+  color: #aaa;
+}
+.CodeMirror pre{
+  padding: 0;
+}
+.CodeMirror {
+  /*font-family: "Lucida Grande", Helvetica, Arial, sans-serif;*/
+  /*font-family: "Lucida Grande", Helvetica, Arial, sans-serif !important;*/
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
+  font-size: 1em;
+  padding: 2px 15px;
+  line-height: 20px;
+  word-spacing: 1px;
+  background: #FFFFFF;
+  color: #000000;
+  /*border: 1px solid #eee;*/
+}
+.CodeMirror-focused{
+  border: 1px solid deepskyblue;
+}
+
+
+.cm-s-libtuts {
+  /*background: #FFFFFF;*/
+  color: #222;
+}
+.cm-s-libtuts .CodeMirror-activeline-background {
+  background: #EEE8D5;
+}
+.cm-s-libtuts .CodeMirror-selected {
+  background: #073642;
+}
+.cm-s-libtuts .cm-comment {
+  color: #93A1A1;
+}
+.cm-s-libtuts .cm-string {
+  color: #586E75;
+}
+.cm-s-libtuts .cm-number {
+  color: #D33682;
+}
+.cm-s-libtuts .cm-keyword {
+  color: #859900;
+}
+.cm-s-libtuts .cm-variable {
+  color: #268BD2;
+}
+.cm-s-libtuts .cm-property {
+  color: #268BD2;
+}

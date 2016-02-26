@@ -1,0 +1,6 @@
+.commentsList
+  if comments.length 
+    each comment in comments
+      include item
+  else
+    section.noComments No comments... No questions...
