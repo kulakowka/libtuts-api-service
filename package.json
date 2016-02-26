@@ -17,9 +17,8 @@
   },
   "scripts": {
     "start": "node --harmony --harmony_default_parameters --harmony_destructuring src",
-    "jshint": "jshint src/. test/. --config",
-    "mocha": "mocha test/ --recursive",
-    "test": "npm run jshint && npm run mocha"
+    "mocha": "mocha test/ --recursive --harmony --harmony_default_parameters --harmony_destructuring ",
+    "test": "standard && npm run mocha"
   },
   "dependencies": {
     "body-parser": "^1.15.0",
