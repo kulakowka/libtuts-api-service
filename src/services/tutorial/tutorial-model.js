@@ -64,9 +64,9 @@ module.exports = function(sequelize) {
     freezeTableName: true
   });
 
-  tutorial.sync({
-    force: true
-  });
+  // tutorial.sync({
+  //   force: true
+  // });
 
   return tutorial;
 };

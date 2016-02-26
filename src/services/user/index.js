@@ -29,16 +29,16 @@ module.exports = function(){
   userService.after(hooks.after);
 
   // Clear db and populate
-  // options.Model.sync({
-  //   force: true
-  // }).then(() => {
-  //   // Create a dummy Users
-  //   userService.create({
-  //     email: 'kulakowka@gmail.com',
-  //     username: 'kulakowka',
-  //     password: 'ak87c210xx'
-  //   }).then(function(user) {
-  //     console.log('Created user', user.toJSON())
-  //   })
-  // });
+  options.Model.sync({
+    force: true
+  }).then(() => {
+    // Create a dummy Users
+    userService.create({
+      email: 'kulakowka@gmail.com',
+      username: 'kulakowka',
+      password: 'ak87c210xx'
+    }).then(function(user) {
+      console.log('Created user', user.toJSON())
+    })
+  });
 };

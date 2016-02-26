@@ -2,17 +2,16 @@
 
 const globalHooks = require('../../../hooks');
 const auth = require('feathers-authentication').hooks;
-
-// const validate = require('./validate')
-// const transform = require('./transform')
+const transformHook = require('feathers-transform-hook')
 
 exports.before = {
   all: [],
   find: [],
   get: [],
   create: [
-    // transform,
-    // validate
+   transformHook({
+      slug: (data, S) => S(v.title).slugify()
+    })
   ],
   update: [],
   patch: [],
