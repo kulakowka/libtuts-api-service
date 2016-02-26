@@ -27,5 +27,4 @@ module.exports = function () {
   app.configure(language)
   app.configure(comment)
   app.configure(project)
-  app.configure(web)
 }

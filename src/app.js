@@ -1,8 +1,6 @@
 'use strict'
 
 const path = require('path')
-const serveStatic = require('feathers').static
-const favicon = require('serve-favicon')
 const compress = require('compression')
 const cors = require('cors')
 const feathers = require('feathers')
@@ -23,8 +21,6 @@ app.use(compress())
   .options('*', cors())
   .use(cors())
   .use(logger('dev'))
-  .use(favicon(path.join(app.get('public'), 'favicon.ico')))
-  .use('/', serveStatic(app.get('public')))
   .use(bodyParser.json())
   .use(bodyParser.urlencoded({ extended: true }))
   .configure(hooks())
