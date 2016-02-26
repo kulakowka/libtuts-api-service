@@ -1,8 +1,9 @@
 'use strict';
 
-const globalHooks = require('../../../hooks');
-const auth = require('feathers-authentication').hooks;
+const globalHooks = require('../../../hooks')
+const auth = require('feathers-authentication').hooks
 const transformHook = require('feathers-transform-hook')
+const marked = require('../../../utils/marked')
 
 exports.before = {
   all: [],
@@ -10,7 +11,8 @@ exports.before = {
   get: [],
   create: [
    transformHook({
-      slug: d => d.title.slugify()
+      slug: d => d.title.slugify(),
+      contentHtml: d => marked(d.content)
     })
   ],
   update: [],

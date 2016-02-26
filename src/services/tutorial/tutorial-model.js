@@ -2,7 +2,7 @@
 
 /*
 title
-slig
+slug
 sourceUrl
 sourceDomain
 content
