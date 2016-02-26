@@ -25,8 +25,20 @@ exports.before = {
 
 exports.after = {
   all: [],
-  find: [],
-  get: [],
+  find: [
+    (hook) => {
+      let data = hook.result.data
+      data.forEach((item) => {
+        item.dataValues.webUrl = `/tutorial/${item.dataValues.id}/${item.dataValues.slug}`
+      })
+    }
+  ],
+  get: [
+    (hook) => {
+      let tutorial = hook.result.dataValues
+      tutorial.webUrl = `/tutorial/${tutorial.id}/${tutorial.slug}`
+    }
+  ],
   create: [],
   update: [],
   patch: [],

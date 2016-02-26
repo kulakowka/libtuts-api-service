@@ -23,7 +23,8 @@ module.exports = function (sequelize) {
       allowNull: false
     },
     slug: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING,
+      allowNull: false
     },
     sourceUrl: {
       type: Sequelize.STRING,
@@ -54,6 +55,10 @@ module.exports = function (sequelize) {
     },
     projects: {
       type: Sequelize.ARRAY(Sequelize.TEXT)
+    },
+    creator: {
+      type: Sequelize.STRING,
+      allowNull: false
     },
     commentsCount: {
       type: Sequelize.INTEGER,

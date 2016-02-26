@@ -1,6 +1,8 @@
 'use strict'
 
 const viewHelpers = require('../../middleware/viewHelpers')
+const User = require('../api/v1/user/user-model')
+const Sequelize = require('sequelize')
 
 module.exports = function () {
   const app = this
@@ -10,7 +12,7 @@ module.exports = function () {
 
   // Initialize our service with any options it requires
   app.get('/', function (req, res) {
-    app.service('api/v1/tutorials').find({}).then((tutorials) => res.render('mainpage/index', {tutorials}))
+    app.service('api/v1/tutorials').find().then((tutorials) => res.render('mainpage/index', {tutorials}))
   })
 
   app.get('/:platform/:name', function (req, res) {

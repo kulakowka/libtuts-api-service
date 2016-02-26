@@ -39,7 +39,8 @@ module.exports = function () {
       keywords: ['nodejs', 'javascript'],
       languages: ['javascript', 'ruby', 'php'],
       platforms: ['npm', 'go', 'rubygems'],
-      projects: ['npm/mocha', 'npm/react']
+      projects: ['npm/mocha', 'npm/react'],
+      creator: 'kulakowka'
     }).then(function (doc) {
       console.log('Created tutorial', doc.toJSON())
     })

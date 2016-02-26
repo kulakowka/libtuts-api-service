@@ -1,6 +1,6 @@
 .tutorialsList
-  if tutorials.length
-    each tutorial in tutorials
+  if tutorials.data.length
+    each tutorial in tutorials.data
       include listItem
   else
     p No tutorials...
