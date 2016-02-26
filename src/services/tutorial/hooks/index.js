@@ -4,6 +4,7 @@ const globalHooks = require('../../../hooks')
 const auth = require('feathers-authentication').hooks
 const transformHook = require('feathers-transform-hook')
 const marked = require('../../../utils/marked')
+const slug = require('slug')
 
 exports.before = {
   all: [],
@@ -11,8 +12,8 @@ exports.before = {
   get: [],
   create: [
    transformHook({
-      slug: d => d.title.slugify(),
-      contentHtml: d => marked(d.content)
+      slug: d => slug(d.title.s),
+      contentHtml: d => marked(d.content.s)
     })
   ],
   update: [],
