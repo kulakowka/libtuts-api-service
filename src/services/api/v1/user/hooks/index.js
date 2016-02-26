@@ -15,9 +15,13 @@ exports.before = {
 }
 
 exports.after = {
-  all: [hooks.remove('password')],
-  find: [],
-  get: [],
+  all: [],
+  find: [
+    // hooks.remove('password')
+  ],
+  get: [
+    hooks.remove('password')
+  ],
   create: [],
   update: [],
   patch: [],
