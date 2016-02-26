@@ -1,31 +1,34 @@
 'use strict';
 
-const globalHooks = require('../../../hooks');
-const auth = require('feathers-authentication').hooks;
-const hooks = require('feathers-hooks');
+const {lowerCaseId, lowerCase} = require('../../../hooks');
+const {hashPassword} = require('feathers-authentication').hooks;
+const {disable, remove} = require('feathers-hooks');
 
 exports.before = {
-  all: [],
+  all: [
+  ],
   find: [],
-  get: [],
+  get: [
+    lowerCaseId()
+  ],
   create: [
-    globalHooks.lowerCase('email', 'username'),  // TODO: как только этот хук добавят в бандлед feathers-hooks, надо будет заменить на hooks.lowerCase
-    auth.hashPassword()
+    lowerCase('email', 'username'),  // TODO: как только этот хук добавят в бандлед feathers-hooks, надо будет заменить на hooks.lowerCase
+    hashPassword()
   ],
   update: [
-    hooks.disable('external')
+    disable('external')
   ],
   patch: [
-    hooks.disable('external')
+    disable('external')
   ],
   remove: [
-    hooks.disable('external')
+    disable('external')
   ]
 };
 
 exports.after = {
   all: [
-    hooks.remove('password')
+    remove('password')
   ],
   find: [],
   get: [],

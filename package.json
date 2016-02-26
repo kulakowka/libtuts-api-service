@@ -16,7 +16,7 @@
     "node": ">= 0.12.0"
   },
   "scripts": {
-    "start": "node --harmony --harmony_default_parameters src",
+    "start": "node --harmony --harmony_default_parameters --harmony_destructuring src",
     "jshint": "jshint src/. test/. --config",
     "mocha": "mocha test/ --recursive",
     "test": "npm run jshint && npm run mocha"

@@ -32,3 +32,9 @@ exports.lowerCase = function (...fields) {
     }
   };
 }
+
+exports.lowerCaseId = function () {
+  return function(hook) {
+    hook.id = hook.id.toLowerCase()
+  }
+}
