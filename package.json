@@ -33,7 +33,6 @@
     "feathers-rest": "^1.2.3",
     "feathers-sequelize": "^1.1.2",
     "feathers-socketio": "^1.3.3",
-    "feathers-transform-hook": "0.1.0",
     "feathers-validate-hook": "0.0.6",
     "jade": "^1.11.0",
     "joi": "^8.0.3",

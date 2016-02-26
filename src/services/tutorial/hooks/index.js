@@ -12,11 +12,11 @@ exports.before = {
   find: [],
   get: [],
   create: [
-   transformHook({
-      slug: d => slug(d.title.toLowerCase().s),
-      contentHtml: d => marked(d.content.s),
-      sourceDomain: d => getDomain(d.sourceUrl.s)
-    })
+    hook => {
+      hook.data.slug = slug(hook.data.title.toLowerCase())
+      hook.data.contentHtml = marked(hook.data.content)
+      hook.data.sourceDomain = getDomain(hook.data.sourceUrl)
+    }
   ],
   update: [],
   patch: [],
