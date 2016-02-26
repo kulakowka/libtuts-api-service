@@ -10,7 +10,7 @@ exports.before = {
   get: [],
   create: [
    transformHook({
-      slug: (data, S) => S(v.title).slugify()
+      slug: d => d.title.slugify()
     })
   ],
   update: [],
