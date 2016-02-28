@@ -7,6 +7,23 @@
 
 const Sequelize = require('sequelize')
 
+/*
+slug
+platform
+name
+language
+homepageUrl
+repositoryUrl
+packageManagerUrl
+description
+keywords
+stars
+rank
+isLoaded
+tutorialsCount
+projectsCount
+*/
+
 module.exports = function (sequelize) {
   const project = sequelize.define('project', {
     slug: {
@@ -85,10 +102,6 @@ module.exports = function (sequelize) {
     }
   }, {
     freezeTableName: true
-  })
-
-  project.sync({
-    // force: true
   })
 
   return project

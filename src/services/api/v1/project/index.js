@@ -34,4 +34,23 @@ module.exports = function () {
       return projectService.get(slug)
     }
   })
+
+  // Clear db and populate
+  options.Model.sync({
+    force: true
+  }).then(() => {
+    // Create a dummy Users
+    projectService.create({
+      platform: 'npm',
+      name: 'mocha',
+      language: 'javascript',
+      homepageUrl: 'http://mochajs.org/',
+      repositoryUrl: 'https://github.com/mochajs/mocha',
+      packageManagerUrl: 'https://www.npmjs.com/package/mocha',
+      description: 'simple, flexible, fun test framework',
+      keywords: ['tap', 'tdd', 'bdd', 'test', 'mocha']
+    }).then((doc) => {
+      console.log('Created project', doc.toJSON().webUrl)
+    }).catch(console.log)
+  })
 }
