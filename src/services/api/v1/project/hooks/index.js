@@ -12,14 +12,7 @@ exports.before = {
   all: [],
   find: [],
   get: [],
-  create: [
-    (hook) => {
-      let data = hook.data
-      data.name = data.name.toString().trim().toLowerCase()
-      data.platform = data.platform.toString().trim().toLowerCase()
-      data.slug = data.platform + '/' + data.name
-    }
-  ],
+  create: [],
   update: [],
   patch: [],
   remove: []

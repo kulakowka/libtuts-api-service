@@ -41,6 +41,7 @@ module.exports = function () {
   }).then(() => {
     // Create a dummy Users
     projectService.create({
+      slug: 'npm/mocha',
       platform: 'npm',
       name: 'mocha',
       language: 'javascript',
@@ -49,8 +50,8 @@ module.exports = function () {
       packageManagerUrl: 'https://www.npmjs.com/package/mocha',
       description: 'simple, flexible, fun test framework',
       keywords: ['tap', 'tdd', 'bdd', 'test', 'mocha']
-    }).then((doc) => {
-      console.log('Created project', doc.toJSON().webUrl)
+    }).then((_doc) => {
+      projectService.get(_doc.slug).then((doc) => console.log('Created project', doc.toJSON().webUrl))
     }).catch(console.log)
   })
 }
