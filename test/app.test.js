@@ -17,8 +17,8 @@ describe('Feathers application tests', () => {
   })
 
   it('starts and shows the index page', (done) => {
-    request('http://localhost:3030', (err, res, body) => {
-      assert.ok(body.indexOf('<html>') !== -1)
+    request('http://localhost:3030', {json: true}, (err, res, body) => {
+      assert.ok(body.name === 'libtuts-api-service')
       done(err)
     })
   })

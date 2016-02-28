@@ -8,7 +8,7 @@ const language = require('./api/v1/language')
 const platform = require('./api/v1/platform')
 const tutorial = require('./api/v1/tutorial')
 const user = require('./api/v1/user')
-
+const packageJson = require('../../package')
 const Sequelize = require('sequelize')
 module.exports = function () {
   const app = this
@@ -26,4 +26,10 @@ module.exports = function () {
   app.configure(language)
   app.configure(comment)
   app.configure(project)
+  app.get('/', (req, res) => {
+    res.json({
+      name: packageJson.name,
+      version: packageJson.version
+    })
+  })
 }

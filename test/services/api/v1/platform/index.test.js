@@ -3,10 +3,10 @@
 'use strict'
 
 const assert = require('assert')
-const app = require('../../../src/app')
+const app = require('../../../../../src/app')
 
 describe('platform service', () => {
   it('registered the platforms service', () => {
-    assert.ok(app.service('platforms'))
+    assert.ok(app.service('api/v1/platforms'))
   })
 })

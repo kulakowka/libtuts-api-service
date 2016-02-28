@@ -1,7 +1,7 @@
 {
   "name": "libtuts-api-service",
   "description": "",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "homepage": "",
   "main": "lib/",
   "keywords": [
@@ -46,6 +46,7 @@
     "passport-github-token": "^2.1.0",
     "pg": "^4.5.1",
     "pg-hstore": "^2.3.2",
+    "request": "^2.69.0",
     "sequelize": "^3.19.3",
     "slug": "^0.9.1",
     "winston": "^2.2.0"
