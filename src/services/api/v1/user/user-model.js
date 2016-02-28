@@ -13,18 +13,12 @@ module.exports = function (sequelize) {
       type: Sequelize.STRING,
       allowNull: false,
       unique: true,
-      primaryKey: true,
-      set: function (val) {
-        this.setDataValue('username', val.toLowerCase().trim())
-      }
+      primaryKey: true
     },
     email: {
       type: Sequelize.STRING,
       allowNull: false,
-      unique: true,
-      set: function (val) {
-        this.setDataValue('email', val.toLowerCase().trim())
-      }
+      unique: true
     },
     password: {
       type: Sequelize.STRING,
@@ -34,10 +28,6 @@ module.exports = function (sequelize) {
     timestamps: true,
     freezeTableName: true
   })
-
-  // user.sync({
-  //   force: true
-  // })
 
   return user
 }

@@ -30,31 +30,19 @@ module.exports = function (sequelize) {
       type: Sequelize.STRING,
       allowNull: false,
       unique: true,
-      primaryKey: true,
-      set: function (val) {
-        this.setDataValue('slug', val.toLowerCase().trim())
-      }
+      primaryKey: true
     },
     platform: {
       type: Sequelize.STRING,
-      allowNull: false,
-      set: function (val) {
-        this.setDataValue('platform', val.toLowerCase().trim())
-      }
+      allowNull: false
     },
     name: {
       type: Sequelize.STRING,
-      allowNull: false,
-      set: function (val) {
-        this.setDataValue('name', val.toLowerCase().trim())
-      }
+      allowNull: false
     },
     language: {
       type: Sequelize.STRING,
-      allowNull: false,
-      set: function (val) {
-        this.setDataValue('language', val.toLowerCase().trim())
-      }
+      allowNull: false
     },
     homepageUrl: {
       type: Sequelize.STRING,
