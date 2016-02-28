@@ -3,6 +3,12 @@
 const core = require('../../../../../hooks')
 const auth = require('feathers-authentication').hooks
 const hooks = require('feathers-hooks')
+const addVirtual = require('feathers-virtual-attribute-hook')
+
+// Hook for add virtual attributes to service response
+const serializer = addVirtual({
+  webUrl: (user) => `/user/${user.username}`
+})
 
 exports.before = {
   all: [],
@@ -15,7 +21,7 @@ exports.before = {
 }
 
 exports.after = {
-  all: [],
+  all: [serializer],
   find: [
     hooks.remove('password')
   ],

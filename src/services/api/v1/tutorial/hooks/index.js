@@ -1,8 +1,14 @@
 'use strict'
 
 // const globalHooks = require('../../../hooks')
-const sanitize = require('./sanitize')
 // const auth = require('feathers-authentication').hooks
+const sanitize = require('./sanitize')
+const addVirtual = require('feathers-virtual-attribute-hook')
+
+// Hook for add virtual attributes to service response
+const serializer = addVirtual({
+  webUrl: (tutorial) => `/tutorial/${tutorial.id}/${tutorial.slug}`
+})
 
 exports.before = {
   all: [],
@@ -24,23 +30,12 @@ exports.before = {
 }
 
 exports.after = {
-  all: [],
-  find: [
-    // (hook) => {
-    //   let data = hook.result.data
-    //   data.forEach((item) => {
-    //     item.dataValues.webUrl = `/tutorial/${item.dataValues.id}/${item.dataValues.slug}`
-    //   })
-    // }
-  ],
-  get: [
-    (hook) => {
-      let tutorial = hook.result.dataValues
-      tutorial.webUrl = `/tutorial/${tutorial.id}/${tutorial.slug}`
-    }
-  ],
+  all: [serializer],
+  find: [],
+  get: [],
   create: [],
   update: [],
   patch: [],
   remove: []
 }
+

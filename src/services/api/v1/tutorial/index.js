@@ -41,8 +41,8 @@ module.exports = function () {
       platforms: ['npm', 'go', 'rubygems'],
       projects: ['npm/mocha', 'npm/react'],
       creator: 'kulakowka'
-    }).then(function (doc) {
-      console.log('Created tutorial', doc.toJSON())
+    }).then((doc) => {
+      console.log('Created tutorial', doc.toJSON().webUrl)
     })
   })
 }

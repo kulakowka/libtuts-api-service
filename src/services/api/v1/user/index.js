@@ -37,8 +37,8 @@ module.exports = function () {
       email: 'kulakowka@gmail.com',
       username: 'kulakowka',
       password: 'ak87c210xx'
-    }).then(function (user) {
-      console.log('Created user', user.toJSON())
+    }).then((user) => {
+      console.log('Created user', user.toJSON().webUrl)
     })
   })
 }
