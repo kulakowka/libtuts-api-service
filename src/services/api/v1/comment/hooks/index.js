@@ -12,9 +12,9 @@ const serializer = addVirtual({
 
 exports.before = {
   all: [
-    // auth.verifyToken(),
-    // auth.populateUser(),
-    // auth.requireAuth()
+    auth.verifyToken(),
+    auth.populateUser(),
+    auth.requireAuth()
   ],
   find: [],
   get: [],
