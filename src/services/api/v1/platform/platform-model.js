@@ -13,10 +13,7 @@ module.exports = function (sequelize) {
       type: Sequelize.STRING,
       allowNull: false,
       unique: true,
-      primaryKey: true,
-      set: function (val) {
-        this.setDataValue('name', val.toLowerCase().trim())
-      }
+      primaryKey: true
     },
     tutorialsCount: {
       type: Sequelize.INTEGER,
@@ -30,9 +27,9 @@ module.exports = function (sequelize) {
     freezeTableName: true
   })
 
-  platform.sync({
-    // force: true
-  })
+  // platform.sync({
+  //   force: true
+  // })
 
   return platform
 }

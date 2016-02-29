@@ -10,22 +10,30 @@ const tutorial = require('./api/v1/tutorial')
 const user = require('./api/v1/user')
 const packageJson = require('../../package')
 const Sequelize = require('sequelize')
+
 module.exports = function () {
   const app = this
 
   const sequelize = new Sequelize(app.get('postgres'), {
     dialect: 'postgres',
-    logging: false
+    logging: false // console.log
   })
+
+  sequelize.sync({
+    // force: true,
+    // logging: console.log
+  })
+
   app.set('sequelize', sequelize)
 
   app.configure(authentication)
   app.configure(user)
-  app.configure(tutorial)
   app.configure(platform)
   app.configure(language)
-  app.configure(comment)
   app.configure(project)
+  app.configure(tutorial)
+  app.configure(comment)
+
   app.get('/', (req, res) => {
     res.json({
       name: packageJson.name,

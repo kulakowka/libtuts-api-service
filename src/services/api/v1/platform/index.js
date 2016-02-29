@@ -9,6 +9,7 @@ module.exports = function () {
 
   const options = {
     Model: platform(app.get('sequelize')),
+    id: 'name',
     paginate: {
       default: 5,
       max: 25
@@ -26,4 +27,5 @@ module.exports = function () {
 
   // Set up our after hooks
   platformService.after(hooks.after)
+
 }

@@ -27,22 +27,5 @@ module.exports = function () {
   // Set up our after hooks
   tutorialService.after(hooks.after)
 
-  // Clear db and populate
-  options.Model.sync({
-    force: true
-  }).then(() => {
-    // Create a dummy Users
-    tutorialService.create({
-      title: 'First test tutorial',
-      sourceUrl: 'https://blog.feathersjs.com/using-feathersjs-as-an-open-source-alternative-to-firebase-b5d93c200cee#.hwh78seor',
-      content: '# header \ntext text',
-      keywords: ['nodejs', 'javascript'],
-      languages: ['javascript', 'ruby', 'php'],
-      platforms: ['npm', 'go', 'rubygems'],
-      projects: ['npm/mocha', 'npm/react'],
-      creator: 'kulakowka'
-    }).then((_doc) => {
-      tutorialService.get(_doc.id).then((doc) => console.log('Created tutorial', doc.toJSON().webUrl))
-    })
-  })
+
 }

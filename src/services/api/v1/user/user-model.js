@@ -26,8 +26,13 @@ module.exports = function (sequelize) {
     }
   }, {
     timestamps: true,
+    paranoid: true,
     freezeTableName: true
   })
+
+  // user.sync({
+  //   force: true
+  // })
 
   return user
 }

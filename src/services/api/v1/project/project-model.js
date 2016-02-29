@@ -45,19 +45,19 @@ module.exports = function (sequelize) {
       allowNull: false
     },
     homepageUrl: {
-      type: Sequelize.STRING,
+      type: Sequelize.STRING(2000),
       validate: {
         isUrl: true
       }
     },
     repositoryUrl: {
-      type: Sequelize.STRING,
+      type: Sequelize.STRING(2000),
       validate: {
         isUrl: true
       }
     },
     packageManagerUrl: {
-      type: Sequelize.STRING,
+      type: Sequelize.STRING(2000),
       validate: {
         isUrl: true
       }
@@ -91,6 +91,10 @@ module.exports = function (sequelize) {
   }, {
     freezeTableName: true
   })
+
+  // project.sync({
+  //   force: true
+  // })
 
   return project
 }

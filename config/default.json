@@ -1,7 +1,7 @@
 {
   "host": "localhost",
   "port": 3001,
-  "postgres": "postgres://postgres:@localhost:5432/feathers",
+  "postgres": "postgres://postgres:@localhost:5432/libtuts_api_service_v1",
   "auth": {
     "token": {
       "secret": "bGGBbrJRXyIPRQW3BLaVp/P9/ounEv2L7qIVGfw3uVePt1eUg4Fi6Ji6Bpjknm9rh9hKHaMLwW7aGBVCejXIxA=="

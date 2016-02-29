@@ -1,6 +1,12 @@
 'use strict'
 
 // const globalHooks = require('../../../hooks')
+const addVirtual = require('feathers-virtual-attribute-hook')
+
+// Hook for add virtual attributes to service response
+const serializer = addVirtual({
+  webUrl: (platform) => `/${platform.name}`
+})
 
 exports.before = {
   all: [],
@@ -13,7 +19,7 @@ exports.before = {
 }
 
 exports.after = {
-  all: [],
+  all: [serializer],
   find: [],
   get: [],
   create: [],

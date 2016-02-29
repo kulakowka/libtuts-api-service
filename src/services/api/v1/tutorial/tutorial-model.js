@@ -22,12 +22,8 @@ module.exports = function (sequelize) {
       type: Sequelize.STRING,
       allowNull: false
     },
-    slug: {
-      type: Sequelize.STRING,
-      allowNull: false
-    },
     sourceUrl: {
-      type: Sequelize.STRING,
+      type: Sequelize.STRING(2000),
       validate: {
         isUrl: true
       }
@@ -63,6 +59,7 @@ module.exports = function (sequelize) {
     }
   }, {
     timestamps: true,
+    paranoid: true,
     freezeTableName: true
   })
 

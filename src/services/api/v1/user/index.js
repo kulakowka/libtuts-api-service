@@ -27,18 +27,4 @@ module.exports = function () {
 
   // Set up our after hooks
   userService.after(hooks.after)
-
-  // Clear db and populate
-  options.Model.sync({
-    force: true
-  }).then(() => {
-    // Create a dummy Users
-    userService.create({
-      email: 'kulakowka@gmail.com',
-      username: 'kulakowka',
-      password: 'ak87c210xx'
-    }).then((_doc) => {
-      userService.get(_doc.username).then((doc) => console.log('Created user', doc.toJSON().webUrl))
-    })
-  })
 }
